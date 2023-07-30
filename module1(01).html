@@ -1,0 +1,24 @@
+<script>
+function calculateDiscountedAmount(totalAmount) {
+    let discountPercent;
+    let discountedAmount;
+
+    if (totalAmount < 50) {
+        discountPercent = 0;
+    } else if (totalAmount >= 50 && totalAmount <= 100) {
+        discountPercent = 0.05;
+    } else if (totalAmount > 100 && totalAmount <= 200) {
+        discountPercent = 0.1;
+    } else {
+        discountPercent = 0.15;
+    }
+
+    discountedAmount = totalAmount - (totalAmount * discountPercent);
+    console.log(`Discounted Amount: $${discountedAmount.toFixed(2)}`);
+    console.log(`Total Amount + Discount Amount: $${(totalAmount + (totalAmount * discountPercent)).toFixed(2)}`);
+}
+
+// Test result
+calculateDiscountedAmount(80);
+calculateDiscountedAmount(250);
+</script>
